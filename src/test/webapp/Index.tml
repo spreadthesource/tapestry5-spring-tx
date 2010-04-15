@@ -1,0 +1,21 @@
+<html
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+	xmlns:p="tapestry:parameter">
+
+	<head>
+		<title>Transaction test</title>
+	</head>
+
+	<body>
+		
+		<t:eventlink id="test1" t:event="TxSuccess" t:context="literal:1">Test1</t:eventlink>
+		
+		<ul>
+			<t:loop t:value="currentUser" t:source="users">
+				<li id="${currentUser.username}">${currentUser.username}</li>
+			</t:loop>
+		</ul>
+
+	</body>
+
+</html>
