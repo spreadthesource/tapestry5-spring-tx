@@ -25,10 +25,9 @@ public class UserManagerImpl implements UserManager
 
     public void springFailure(int i)
     {
-        this.source.getSession();
         User user = new User();
         user.setUsername("ccordenier-tapestry-" + i);
-        source.getSession().persist(user);
+        source.getSession().save(user);
         // This line will fail and the transaction must be rolled back.
         this.springBean.failure(i);
     }

@@ -1,4 +1,4 @@
-# Tapestry 5 Rome Plugin
+# Tapestry 5 Spring Tx Plugin
 
 ## How to
 
