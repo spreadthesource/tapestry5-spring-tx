@@ -37,7 +37,6 @@ public class SpringHibernateSessionManagerImpl implements HibernateSessionManage
     {
         DefaultTransactionDefinition definition = new DefaultTransactionDefinition();
         definition.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
-        definition.setReadOnly(false);
         this.status = txManager.getTransaction(definition);
     }
 

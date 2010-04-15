@@ -8,8 +8,11 @@
 
 	<body>
 		
-		<t:eventlink id="test1" t:event="TxSuccess" t:context="literal:1">Test1</t:eventlink>
 		
+		<t:eventlink id="test1" t:event="TxSuccess" t:context="literal:1">Test1</t:eventlink>
+		<t:eventlink id="test2" t:event="TapestryTxFailure" t:context="literal:2">Test2</t:eventlink>
+		<t:eventlink id="test3" t:event="SpringTxFailure" t:context="literal:3">Test3</t:eventlink>
+
 		<ul>
 			<t:loop t:value="currentUser" t:source="users">
 				<li id="${currentUser.username}">${currentUser.username}</li>

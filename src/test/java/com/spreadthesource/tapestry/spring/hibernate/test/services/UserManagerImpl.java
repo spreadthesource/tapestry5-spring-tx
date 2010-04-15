@@ -25,6 +25,7 @@ public class UserManagerImpl implements UserManager
 
     public void springFailure(int i)
     {
+        this.source.getSession();
         User user = new User();
         user.setUsername("ccordenier-tapestry-" + i);
         source.getSession().persist(user);
@@ -42,7 +43,6 @@ public class UserManagerImpl implements UserManager
 
     public void emulateSuccess(int i)
     {
-        System.out.println("----------------> in EmulateSuccess");
         this.springBean.success(i);
         User user = new User();
         user.setUsername("ccordenier-tapestry-" + i);
