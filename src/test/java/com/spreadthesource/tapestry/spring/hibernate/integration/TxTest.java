@@ -24,7 +24,7 @@ public class TxTest extends SeleniumTestCase
     
     @Test
     public void tapestryTxFailure() {
-        
+
         open("/index");
         waitForPageToLoad();
         click("id=test2");
@@ -32,12 +32,8 @@ public class TxTest extends SeleniumTestCase
         
         open("/index");
         waitForPageToLoad();
-        assertFalse(
-                "ccordenier-tapestry-1".equals(getText("id=ccordenier-tapestry-2")),
-                "Tapestry user has not been added");
-        assertFalse(
-                "ccordenier-spring-1".equals(getText("id=ccordenier-spring-2")),
-                "Spring user has not been added");
+        assertFalse(this.isElementPresent("id=ccordenier-tapestry-2"));
+        assertFalse(this.isElementPresent("id=ccordenier-spring-2"));
     }
 
     
@@ -51,11 +47,7 @@ public class TxTest extends SeleniumTestCase
         
         open("/index");
         waitForPageToLoad();
-        assertFalse(
-                "ccordenier-tapestry-1".equals(getText("id=ccordenier-tapestry-3")),
-                "Tapestry user has not been added");
-        assertFalse(
-                "ccordenier-spring-1".equals(getText("id=ccordenier-spring-3")),
-                "Spring user has not been added");
+        assertFalse(this.isElementPresent("id=ccordenier-tapestry-3"));
+        assertFalse(this.isElementPresent("id=ccordenier-spring-3"));
     }
 }
