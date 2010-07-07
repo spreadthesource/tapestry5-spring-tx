@@ -2,6 +2,7 @@ package com.spreadthesource.tapestry.spring.hibernate;
 
 import org.apache.tapestry5.hibernate.HibernateSessionManager;
 import org.apache.tapestry5.hibernate.HibernateSessionSource;
+import org.apache.tapestry5.hibernate.HibernateSymbols;
 import org.apache.tapestry5.hibernate.HibernateTransactionAdvisor;
 import org.apache.tapestry5.ioc.Configuration;
 import org.apache.tapestry5.ioc.MappedConfiguration;
@@ -26,6 +27,11 @@ import org.springframework.context.ApplicationContext;
  */
 public class SpringHibernateModule
 {
+
+    public static void contributeApplicationDefaults(MappedConfiguration<String, String> conf)
+    {
+        conf.add(HibernateSymbols.DEFAULT_CONFIGURATION, "false");
+    }
 
     /**
      * Bind tapestry-spring-tx services.
