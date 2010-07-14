@@ -6,7 +6,6 @@ import java.util.Set;
 
 import javax.persistence.Entity;
 
-import org.apache.tapestry5.ioc.internal.util.Defense;
 import org.hibernate.HibernateException;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
@@ -33,7 +32,7 @@ public class TapestryLocalSessionFactoryBean extends LocalSessionFactoryBean
         config.setProperty("hibernate.show_sql", "true");
         config.setProperty("current_session_context_class", "thread");
         
-        Defense.cast(config, AnnotationConfiguration.class, "configuration");
+        assert config instanceof AnnotationConfiguration;
         AnnotationConfiguration cfg = (AnnotationConfiguration) config;
 
         if (this.getPackageNames() != null)
