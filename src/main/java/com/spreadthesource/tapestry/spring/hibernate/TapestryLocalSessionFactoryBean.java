@@ -26,12 +26,6 @@ public class TapestryLocalSessionFactoryBean extends LocalSessionFactoryBean
     @Override
     protected void postProcessConfiguration(Configuration config) throws HibernateException
     {
-        
-        config.setProperty("hibernate.connection.autocommit", "false");
-        config.setProperty("hibernate.connection.pool_size", "1");
-        config.setProperty("hibernate.show_sql", "true");
-        config.setProperty("current_session_context_class", "thread");
-        
         assert config instanceof AnnotationConfiguration;
         AnnotationConfiguration cfg = (AnnotationConfiguration) config;
 
